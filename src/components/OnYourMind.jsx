@@ -1,6 +1,6 @@
 import leftarrow from '../assets/leftarrow.png';
 import rightarrow from '../assets/rightarrow.png';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 function OnYourMind({data}) {
     // const [data, setData] = useState([]);

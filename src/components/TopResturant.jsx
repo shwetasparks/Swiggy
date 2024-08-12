@@ -1,4 +1,4 @@
-import {useState,useEffect} from 'react';
+import {useState} from 'react';
 import leftarrow from "../assets/leftarrow.png";
 import rightarrow from "../assets/rightarrow.png";
 
@@ -55,10 +55,11 @@ function TopResturant({data}) {
           <div className={`flex mt-4 gap-5 w-full duration-300`} style={{translate:`-${value}%`}}  border border-red>
 
             {
-             data.map((item)=>(
+             data.map(({info})=>(
             <div className='min-w-[295px] h-[182px] border border-black relative group'>
-                 <img className='w-full h-full rounded-2xl object-cover' src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+item?.info?.cloudinaryImageId }/>
+                 <img className='w-full h-full rounded-2xl object-cover' src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+info?.cloudinaryImageId }/>
                  <div className='bg-gradient-to-t from-black from-10% to-transparent to-40% rounded-xl  absolute h-full w-full top-0 hover:none'> </div>
+                 <p className='absolute bottom-0 text-white text-2xl ml-2 mb-1 font-bold'>{info.aggregatedDiscountInfoV3?.header + " " + info.aggregatedDiscountInfoV3?.subHeader}</p>
             </div>
              
                 ))
