@@ -1,10 +1,10 @@
 import OnYourMind from './OnYourMind';
 import TopResturant from './TopResturant';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 
 
 function Body() {   
-    const [TopRestaurantData, setTopRestaurantData] = useState([]);
+    const [topRestaurantData, setTopRestaurantData] = useState([]);
     const [onYourMindData, setOnYourMindData] = useState([ ]);
 
 
@@ -18,6 +18,9 @@ function Body() {
         setTopRestaurantData( result?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setOnYourMindData(result?.data?.cards[0]?.card?.card?.imageGridCards?.info);
     }
+    useEffect(()=>{
+        fetchData();
+    },[]);
 
     return (
         <div className="w-full  " >
@@ -25,7 +28,7 @@ function Body() {
                 <OnYourMind data={onYourMindData} />
                 <hr className="border" />
                 
-                 <TopResturant data={TopRestaurantData} />
+                 <TopResturant data={topRestaurantData} />
                 <hr className="border " />
             </div>
         </div>

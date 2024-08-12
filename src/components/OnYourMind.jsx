@@ -2,8 +2,8 @@ import leftarrow from '../assets/leftarrow.png';
 import rightarrow from '../assets/rightarrow.png';
 import { useState, useEffect } from 'react';
 
-function OnYourMind() {
-    const [data, setData] = useState([]);
+function OnYourMind({data}) {
+    // const [data, setData] = useState([]);
     const [value, setValue] = useState(0);
 
     function handlePrev() {
@@ -14,18 +14,18 @@ function OnYourMind() {
         setValue(value + 32);
     }
 
-    async function fetchData() {
-        const data = await fetch(
-            'https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.73390&lng=76.78890&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING'
-        );
+    // async function fetchData() {
+    //     const data = await fetch(
+    //         'https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.73390&lng=76.78890&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING'
+    //     );
 
-        const result = await data.json();
-        setData(result?.data?.cards[0]?.card?.card?.imageGridCards?.info);
-    }
+    //     const result = await data.json();
+    //     setData(result?.data?.cards[0]?.card?.card?.imageGridCards?.info);
+    // }
 
-    useEffect(() => {
-        fetchData();
-    }, []);
+    // useEffect(() => {
+    //     fetchData();
+    // }, []);
 
     return (
         <div className='mb-10'>

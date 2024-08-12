@@ -2,9 +2,9 @@ import {useState,useEffect} from 'react';
 import leftarrow from "../assets/leftarrow.png";
 import rightarrow from "../assets/rightarrow.png";
 
-function TopResturant() {
+function TopResturant({data}) {
     const [value,setValue]=useState(0)
-    const [data,setData]=useState([])
+    // const [data,setData]=useState([])
 
     function handlePrev(){
         setValue((prev)=>prev+50)
@@ -14,19 +14,22 @@ function TopResturant() {
     }
 
     // fetch function
-    async function fetchData(){
-        const data = await fetch(
-            'https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.73390&lng=76.78890&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING'
-        );
-        const result=await data.json();
-        setData(result?.data?.cards[1].card?.card?.gridElements?.infoWithStyle?.restaurants)
+    // async function fetchData(){
+    //     const data = await fetch(
+    //         'https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.73390&lng=76.78890&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING'
+    //     );
+    //     const result=await data.json();
+    //     setData(result?.data?.cards[1].card?.card?.gridElements?.infoWithStyle?.restaurants)
 
-        console.log(result?.data?.cards[1].card?.card?.gridElements?.infoWithStyle?.restaurants);
+    //     console.log(result?.data?.cards[1].card?.card?.gridElements?.infoWithStyle?.restaurants);
         
-    }
-    useEffect(()=>{
-        fetchData()
-    },[])
+    // }
+    // useEffect(()=>{
+    //     fetchData()
+    // },[])
+
+    
+    
   
 
     return (
