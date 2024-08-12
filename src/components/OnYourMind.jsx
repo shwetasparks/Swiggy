@@ -20,7 +20,6 @@ function OnYourMind() {
         );
 
         const result = await data.json();
-        // console.log(result?.data?.cards);
         setData(result?.data?.cards[0]?.card?.card?.imageGridCards?.info);
     }
 
