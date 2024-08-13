@@ -1,7 +1,7 @@
 import OnYourMind from './OnYourMind';
 import TopResturant from './TopResturant';
 import { useState,useEffect } from 'react';
-
+import OnlineFoodDelivery from './OnlineFoodDelivery';
 
 function Body() {   
     const [topRestaurantData, setTopRestaurantData] = useState([]);
@@ -30,6 +30,10 @@ function Body() {
                 
                  <TopResturant data={topRestaurantData} />
                 <hr className="border " />
+
+                <OnlineFoodDelivery data={topRestaurantData}/>
+                <hr className="border " />
+                
             </div>
         </div>
     );

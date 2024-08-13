@@ -33,7 +33,7 @@ function TopResturant({ data }) {
     return (
         <div className="my-10  border border-green-600 px-3">
             <div className="flex justify-between  gap-3 mx-2 my-1">
-                <p className="text-2xl font-extrabold">Top resturant chains in Chandigarh</p>
+                <p className="text-2xl font-extrabold">Top restuarant chains in Chandigarh</p>
                 <div className="flex gap-4 m-1 ">
                     <img
                         onClick={handlePrev}
