@@ -1,15 +1,15 @@
-import Navbar from './components/Navbar.jsx';
-import Body from './components/Body.jsx';
-
+import { Routes,Route } from 'react-router-dom';
+import Body from "./components/Body";
+import Navbar  from './components/Navbar.jsx';
+import './index.css'
 
 function App() {
     return (
-        <div className="">
-            <Navbar />
-            <Body />
-            
-           
-        </div>
+        <Routes>
+                <Route path="/" element={<Navbar />} >    
+                     <Route path="/" element={<Body />} />  
+                 </Route>
+        </Routes>
     );
 }
 

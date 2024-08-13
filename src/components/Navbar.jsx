@@ -6,10 +6,13 @@ import offer from '../assets/offer.svg';
 import help from '../assets/help.svg';
 import signin from '../assets/signin.svg';
 import shop from '../assets/market.png';
+import { Outlet } from 'react-router-dom';
+
 
 function Navbar() {
     return (
-        <div className="w-full shadow-md h-20 flex center justify-center  ">
+        <>
+       <div className="w-full shadow-md h-20 flex center justify-center  ">
             <div className=" w-full max-w-[90%] flex  justify-between border border-black ">
                 {/* logo */}
                 <div className="flex  items-center py-1 gap-4">
@@ -56,6 +59,12 @@ function Navbar() {
                 </div>
             </div>
         </div>
+   
+   {/* have to add in parent route */}
+        <Outlet/>   
+        
+        </>
+        
     );
 }
 
