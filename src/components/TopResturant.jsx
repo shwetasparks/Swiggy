@@ -4,8 +4,6 @@ import rightarrow from "../assets/rightarrow.png";
 import RestuarantCard from './RestuarantCard';
 
 function TopResturant({ data }) {
-    console.log("this is data",data);
-    
     const [value, setValue] = useState(0)
     // const [data,setData]=useState([])
 
@@ -32,7 +30,7 @@ function TopResturant({ data }) {
     // },[])
     return (
         <div className="my-10  border border-green-600 px-3">
-            <div className="flex justify-between  gap-3 mx-2 my-1">
+            <div className="flex justify-between  gap-3 mx-2 my-1 border border-red-700">
                 <p className="text-2xl font-extrabold">Top restuarant chains in Chandigarh</p>
                 <div className="flex gap-4 m-1 ">
                     <img
@@ -50,13 +48,13 @@ function TopResturant({ data }) {
                     />
                 </div>
             </div>
-            <div className={`flex mt-4 gap-5 w-full duration-300 `} style={{ translate: `-${value}%` }}>
-
+            <div className={`flex item-center justify-start  mt-4 gap-4 w-full duration-300 border border-blue-700 `} style={{ translate: `-${value}%` }} >
+              
                 {
-                    data.map(({info}) => (
-                        <div className='hover:scale-95 duration-300'>
+                    data.map(({info,cta:{link}}) => (
+                        <div className='hover:scale-95 duration-300' key={info.id}>
                             {/* cut restuarant part from here */}
-                            <RestuarantCard info={info}/>
+                            <RestuarantCard {...info} link={link}/>
                         </div>
                     ))
                 }

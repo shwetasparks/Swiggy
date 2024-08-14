@@ -8,10 +8,10 @@ function OnlineFoodDelivery({data}) {
         
         <div className="grid grid-cols-4 gap-7">
         {
-             data.map(({info}) => (
+             data.map(({info,cta:{link}}) => (
                         <div className='hover:scale-95 duration-300'>
                             {/* cut restuarant part from here */}
-                            <RestuarantCard info={info}/>
+                            <RestuarantCard {...info} link={link}/>
                         </div>
                     ))
                 }

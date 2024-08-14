@@ -6,7 +6,7 @@ import offer from '../assets/offer.svg';
 import help from '../assets/help.svg';
 import signin from '../assets/signin.svg';
 import shop from '../assets/market.png';
-import { Outlet } from 'react-router-dom';
+import { Outlet,Link } from 'react-router-dom';
 
 
 function Navbar() {
@@ -16,7 +16,10 @@ function Navbar() {
             <div className=" w-full max-w-[90%] flex  justify-between border border-black ">
                 {/* logo */}
                 <div className="flex  items-center py-1 gap-4">
+                    <Link to={"/"}>
                     <img src={Logo} className="w-20 h-14 " />
+                    </Link>
+                    
                     <p className="font-bold border-b-2 border-black text-sm">
                         Other
                     </p>
