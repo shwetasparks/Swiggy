@@ -6,12 +6,12 @@ import OnlineFoodDelivery from './OnlineFoodDelivery';
 function Body() {   
     const [topRestaurantData, setTopRestaurantData] = useState([]);
     const [onYourMindData, setOnYourMindData] = useState([ ]);
-
+ 
 
     // fetch data
     async function fetchData() {
         const data = await fetch(
-            'https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.73390&lng=76.78890&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING'
+            'https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.7333148&lng=76.7794179&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING'
         );
 
         const result = await data.json();

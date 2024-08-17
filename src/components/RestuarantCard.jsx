@@ -2,7 +2,7 @@ import star from "../assets/star.png"
 import { Link } from "react-router-dom"
 
 function RestuarantCard(info) {
-   console.log("this is info",info.link.split("/")[4]);
+   // console.log("this is info",info.link.split("/")[4]);
    
    return (
    <Link to={`/restuarantMenu/${info.link.split("/").at(-1)}`}> 
@@ -19,7 +19,7 @@ function RestuarantCard(info) {
 
   <div className='m-2 flex flex-col items-start  border border-black '>
       <h2 className='font-bold text-xl'>{info?.name}</h2>
-      <p className='text-xl flex justify-start items-center '><img className='bg-green-600  p-1 mx-1 rounded-full w-5 'src={star}/>{info?.avgRating} <p className='pb-2 text-xl font-extrabold px-1'>.</p> <span className='font-bold text-lg'> {info?.sla?.slaString}</span></p>
+      <p className='text-xl flex justify-start  items-center '><img className='bg-green-600  p-1 mx-1 rounded-full w-5 'src={star}/>{info?.avgRating} <p className='pb-2 text-xl font-extrabold px-1'>.</p> <span className='font-bold text-lg'> {info?.sla?.slaString}</span></p>
       <p className='text-lg font-medium font-gilroy text-gray-500 line-clamp-1 '>{info?.cuisines}</p>
       <p className='text-lg font-medium text-gray-500'>{info?.locality} </p>
   </div>
