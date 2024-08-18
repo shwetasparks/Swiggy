@@ -6,6 +6,8 @@ import leftarrow from '../assets/leftarrow.png';
 import rightarrow from '../assets/rightarrow.png';
 import deal from "../assets/deal.png";
 import search from '../assets/search.svg';
+import uparrow from "../assets/uparrow.png";
+import downarrow from "../assets/downarrow.png";
 
 function handleNext(){
    setValue(value + 32);
@@ -24,12 +26,12 @@ function RestuarantMenu() {
    // console.log("this is id here",id.split("-").at(-1));
    let mainId = id.split("-").at(-1)
 
-   const [menuData, setMenuData] = useState(" ")
+   const [menuData, setMenuData] = useState([])
    const [resInfo, setResInfo] = useState([])
    const [discountData, setDiscountData] = useState([])
    const [value,setValue]=useState()
    // console.log(" res info is :-", resInfo);
-// console.log("menu",menuData);
+console.log("menu",menuData);
 
 
 
@@ -137,7 +139,20 @@ function RestuarantMenu() {
             <div>
                {
                   menuData.map(({card:{card:{itemCards,title}}})=>(
-                     <h1>{title}</h1>
+                      <div>
+                        <div className="flex justify-between items-center p-4">
+                        <h1 className="font-extrabold text-xl">  {title}({itemCards.length})</h1>
+                        <img className="w-5 h-5" src={uparrow} />
+                        </div>
+                        {/* render */}
+                        <div className="m-5">
+                        {
+                           itemCards.map(({card:{info}})=>(
+                              <h1>{info.name}</h1>
+                           ))
+                        }
+                        </div>
+                     </div>                  
                   ))
                }
             </div>
